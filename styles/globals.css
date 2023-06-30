@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  color: white;
+}
+.Anim1 {
+  transform: translateY(0);
+  opacity: 45%;
+  animation-name: Anim1;
+  animation-duration: 4s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@keyframes Anim1 {
+  0%   {opacity: 5%;transform: translateY(50%);}
+  100% {opacity: 45% ;transform: translateY(0);}
+}
+.Anim2 {
+  transform: translateX(0);
+  opacity: 40%;
+  animation-name: Anim2;
+  animation-duration: 4s;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes Anim2 {
+  0%   {opacity: 5%;transform: translateX(50%);}
+  100% {opacity: 40% ;transform: translateX(0);}
+}
+.vids{
+  background-image: url('https://s8.uupload.ir/files/tcv夜_qojo.jpg');
+  height: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/*------------------------------------------------------------------*/
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: orangered #0A1118;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0A1118;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: orangered;
+  border-radius: 8px;
+  border: 3px none #0A1118;
+}
+
+.ltr-style {
+  direction: ltr;
 }
