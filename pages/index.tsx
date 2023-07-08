@@ -19,22 +19,29 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import {HeaderSecBox} from "@/components/HeaderSecBox/HeaderSecBox";
 
 export default function Home() {
 
     const [active,setActive] = useState<string>('MSS')
+    const [isOpen,setIsOpen] = useState<boolean>(false)
+    const [headTitle,setHeadTitle] = useState<string>('')
     const [progress,setProgress] = useState<number>(20)
 
 
+    const setTitle = (Title:string):any => {
+        setHeadTitle(Title)
+        setIsOpen(!isOpen)
+    }
 
   return (
     <main className='w-[100%] h-max bg-[#0A1118]'>
         <header className='w-[100%] h-16 p-4 bg-[#FFF] flex items-center justify-around'>
             <img src='https://s8.uupload.ir/files/download_v4w4.png' className='w-[15%]' crossOrigin='anonymous'/>
             <div className='flex items-center gap-5 justify-center'>
-                <HeaderBTN Title={'Products'} />
-                <HeaderBTN Title={'Support'} />
-                <HeaderBTN Title={'Items'} />
+                <HeaderBTN Title={'Products'} SetTitle={setTitle} />
+                <HeaderBTN Title={'Support'} SetTitle={setTitle} />
+                <HeaderBTN Title={'Items'} SetTitle={setTitle} />
             </div>
             <button
                 className='w-[15%] border border-red-600 text-red-600 p-2 rounded-md rounded-br-2xl cursor-pointer
@@ -42,69 +49,7 @@ export default function Home() {
                 Call +99999988888
             </button>
         </header>
-        <article className='w-[100%] h-max bg-[#152A3FF2] flex items-center gap-[30rem]'>
-            <div className='absolute Anim1 left-[100px] z-0'>
-                <h1 className='text-orange-400 text-9xl font-bold'>We Stop</h1>
-                <h2 className=' text-8xl font-light text-white'>Cyber Threats</h2>
-            </div>
-            <img src='https://s8.uupload.ir/files/images_64u.jpg' className='absolute w-[15rem] right-[350px] Anim2 z-0'/>
-            <div className='m-10 z-10 flex flex-col gap-4'>
-                <h3 className='font-bold pb-2 border-b border-orange-400 w-[5rem]'>TIPS</h3>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-            </div>
-            <div className='m-10 z-10 flex flex-col gap-4'>
-                <h3 className='font-bold pb-2 border-b border-orange-400 w-[5rem]'>TIPS</h3>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-                <div className='flex text-lg items-center gap-2'>
-                    <div className='ml-4 w-[0.5rem] h-[0.5rem] rounded-full bg-orange-500'></div>
-                    Test
-                </div>
-            </div>
-
-
-        </article>
+            <HeaderSecBox Title={headTitle} isOpen={isOpen} />
         <div className='w-max absolute left-[200px] h-max  p-12'>
             <div className='bg-[#EA6333] opacity-30 w-[30rem] h-[12rem]  rounded-full
              blur blur-3xl shadow-inner'></div>
